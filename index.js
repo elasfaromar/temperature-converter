@@ -3,6 +3,7 @@ const fahrMult = 9/5;
 const fahrConst = 32;
 
 document.getElementById("calculate").onclick = function() {
+    let decimalPlaces = document.getElementById("decimal").value;
     let celsiusFrom = document.getElementById("celsius-from").checked;
     let kelvinFrom = document.getElementById("kelvin-from").checked;
     let fahrFrom = document.getElementById("fahrenheit-from").checked;
@@ -14,15 +15,15 @@ document.getElementById("calculate").onclick = function() {
     let converted = (Number)(document.getElementById("temp-orig-number").value);
     
     switch(true) {
-        case (celsiusFrom && kelvinTo): converted = (converted + kelvin) + "K"; break;
-        case (celsiusFrom && fahrTo): converted = Math.round(((converted * fahrMult) + fahrConst) * 100) / 100 + "°F"; break;
-        case (celsiusFrom && celsiusTo): converted += "°C"; break;
-        case (kelvinFrom && celsiusTo): converted = Math.round((converted - kelvin) * 100) / 100 + "°C"; break;
-        case (kelvinFrom && fahrTo): converted = Math.round(((converted - kelvin) * fahrMult + fahrConst) * 100) / 100 + "°F"; break;
-        case (kelvinFrom && kelvinTo): converted += "K"; break;
-        case (fahrFrom && celsiusTo): converted = Math.round(((converted-fahrConst) / fahrMult) * 100) / 100 + "°C"; break;
-        case (fahrFrom && kelvinTo): converted = Math.round(((converted-fahrConst) / fahrMult + kelvin) * 100) / 100 + "K"; break;
-        case (fahrFrom && fahrTo): converted += "°F"; break;
+        case (celsiusFrom && kelvinTo): converted = (converted + kelvin).toFixed(decimalPlaces) + "K"; break;
+        case (celsiusFrom && fahrTo): converted = ((converted * fahrMult) + fahrConst).toFixed(decimalPlaces) + "°F"; break;
+        case (celsiusFrom && celsiusTo): converted = converted.toFixed(decimalPlaces) + "°C"; break;
+        case (kelvinFrom && celsiusTo): converted = (converted - kelvin).toFixed(decimalPlaces) + "°C"; break;
+        case (kelvinFrom && fahrTo): converted = ((converted - kelvin) * fahrMult + fahrConst).toFixed(decimalPlaces) + "°F"; break;
+        case (kelvinFrom && kelvinTo):  converted = converted.toFixed(decimalPlaces) + "K"; break;
+        case (fahrFrom && celsiusTo): converted = ((converted - fahrConst) / fahrMult).toFixed(decimalPlaces) + "°C"; break;
+        case (fahrFrom && kelvinTo): converted = ((converted - fahrConst) / fahrMult + kelvin).toFixed(decimalPlaces) + "K"; break;
+        case (fahrFrom && fahrTo): converted = converted.toFixed(decimalPlaces) + "°F"; break;
         default: console.log("Error");
     }
     
