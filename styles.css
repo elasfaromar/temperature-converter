@@ -1,0 +1,66 @@
+@font-face {
+    font-family: "Poppins-Thin";
+    src: url(Fonts/Poppins-Thin.ttf);
+}
+@font-face {
+    font-family: "Poppins-Black";
+    src: url(Fonts/Poppins-Black.ttf);
+}
+@font-face {
+    font-family: "Poppins-SemiBold";
+    src: url(Fonts/Poppins-SemiBold.ttf);
+}
+
+body{
+    background-color: #e0ffff;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+h1{
+    text-align: center;
+    font-family: "Poppins-Black";
+    font-size: 5vw;
+}
+
+h3{
+    margin: 0;
+    font-family: "Poppins-Thin";
+}
+
+label, p{
+    font-family: "Poppins-SemiBold";
+    margin-right: 1vw;
+}
+
+#content {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+#radio-buttons{
+    display: flex;
+    margin: 1vh;
+}
+
+#radio-buttons>*{
+    margin: 5vw;
+}
+
+#from, #to {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+button{
+    margin: 1vw;
+    padding: 0.5vw;
+    font-size: 2.1vh;
+    border-radius: 10%;
+    border-width: 0.05vw;
+}
+
+#temp-converted {
+    display: flex;
+}

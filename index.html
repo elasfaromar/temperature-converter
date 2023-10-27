@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="fire-dynamic-color.png">
+</head>
+
+<body>
+    <h1>Temperature Converter</h1>
+
+    <div id="content">
+        <div id="radio-buttons">
+            <div id="from"> 
+                <h3>From</h3>
+                <div>
+                    <input type="radio" id="celsius-from" name="from"></input>
+                    <label for="celsius-from">Celsius</label>
+                </div>
+                <div>
+                    <input type="radio" id="kelvin-from" name="from"></input>
+                    <label for="kelvin-from">Kelvin</label>
+                </div>
+                <div>
+                    <input type="radio" id="fahrenheit-from" name="from"></input>
+                    <label for="fahrenheit-from">Fahrenheit</label>
+                </div>
+            </div>
+        
+            <div id="to">
+                <h3>To</h3>
+                <div>
+                    <input type="radio" id="celsius-to" name="to"></input>
+                    <label for="celsius-to">Celsius</label>
+                </div>
+                <div>
+                    <input type="radio" id="kelvin-to" name="to"></input>
+                    <label for="kelvin-to">Kelvin</label>
+                </div>
+                <div>
+                    <input type="radio" id="fahrenheit-to" name="to"></input>
+                    <label for="fahrenheit-to">Fahrenheit</label>
+                </div>    
+            </div>
+        </div>
+    
+        <div id="temp-orig">
+            <label for="temp-orig-number">Enter Original Temperature</label>
+            <input type="number" id="temp-orig-number"></input>
+        </div>
+
+        <div id="temp-converted">
+            <p>Converted Temperature: </p>
+            <p id="temp-converted-number"></p>
+        </div>
+
+        <button type="submit" id="calculate">Calculate</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
